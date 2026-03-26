@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Menu, X, LayoutDashboard } from 'lucide-react'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -47,6 +48,13 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/login"
+            className="bg-indigo hover:bg-indigo/90 text-white text-sm font-medium px-5 py-2 rounded-full transition-colors flex items-center gap-1.5"
+          >
+            <LayoutDashboard size={14} />
+            Dashboard
+          </Link>
           <a
             href="#cta"
             className="bg-saffron hover:bg-saffron-dark text-white text-sm font-medium px-5 py-2 rounded-full transition-colors"
@@ -79,6 +87,14 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/login"
+              className="bg-indigo hover:bg-indigo/90 text-white text-sm font-medium px-5 py-2 rounded-full text-center transition-colors flex items-center justify-center gap-1.5"
+              onClick={() => setMobileOpen(false)}
+            >
+              <LayoutDashboard size={14} />
+              Dashboard
+            </Link>
             <a
               href="#cta"
               className="bg-saffron hover:bg-saffron-dark text-white text-sm font-medium px-5 py-2 rounded-full text-center transition-colors"

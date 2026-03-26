@@ -1,21 +1,16 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Problem from './components/Problem'
-import HowItWorks from './components/HowItWorks'
-import Features from './components/Features'
-import CTA from './components/CTA'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePage from './components/HomePage'
+import Login from './components/Login'
+import DashboardPage from './components/DashboardPage'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <Hero />
-      <Problem />
-      <HowItWorks />
-      <Features />
-      <CTA />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

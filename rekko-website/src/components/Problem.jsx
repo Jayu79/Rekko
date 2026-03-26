@@ -1,7 +1,21 @@
-import { AlertTriangle, FileWarning, Gift, Calculator } from 'lucide-react'
+import { AlertTriangle, FileWarning, Gift, Calculator, LayoutList, Users } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const painPoints = [
+  {
+    icon: LayoutList,
+    stat: 'Campaigns tracked across 5 tools',
+    description: 'Briefs on email, deliverables on sheets, payments on Tally, compliance with the CA — nothing talks to each other.',
+    color: 'text-danger',
+    bg: 'bg-danger-light',
+  },
+  {
+    icon: Users,
+    stat: 'Creator deliverables fall through cracks',
+    description: 'No single view of which creators have delivered, who\'s overdue, and what\'s pending approval.',
+    color: 'text-danger',
+    bg: 'bg-danger-light',
+  },
   {
     icon: AlertTriangle,
     stat: 'TDS filed under the wrong section',
@@ -40,15 +54,15 @@ export default function Problem() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14 reveal">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-            India's creator economy runs on{' '}
-            <span className="text-danger">spreadsheets and prayer.</span>
+            Agencies are drowning in{' '}
+            <span className="text-danger">campaign chaos.</span>
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
-            Brands and agencies are one wrong TDS section away from penalties, and creators are left chasing their own tax credits.
+            Campaigns run on spreadsheets, payments are manual, compliance is an afterthought — and everything breaks at scale.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {painPoints.map((point, i) => {
             const Icon = point.icon
             return (

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "rekko-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/jayanth/Documents/Rekko/rekko-website"],
+      "port": 5173
+    }
+  ]
+}

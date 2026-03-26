@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(/Users/jayanth/Documents/Rekko/rekko-website/public/favicon.svg:*)",
+      "Bash(npm run:*)",
+      "Bash(node -e \"const l = require\\(''lucide-react''\\); console.log\\(Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\(''linked''\\) || k.toLowerCase\\(\\).includes\\(''twitter''\\)\\).join\\('', ''\\)\\)\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo:*)",
+      "Bash(npx vercel:*)",
+      "Bash(git push:*)",
+      "Bash(git remote:*)",
+      "Bash(brew install:*)",
+      "Bash(gh auth:*)",
+      "Bash(sudo chown:*)",
+      "Bash(.gitignore:*)"
+    ]
+  }
+}

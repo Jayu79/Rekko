@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FAFAF8;
+  --color-foreground: #1C1917;
+  --color-saffron: #F59E0B;
+  --color-saffron-light: #FEF3C7;
+  --color-saffron-dark: #D97706;
+  --color-indigo: #3730A3;
+  --color-indigo-light: #E0E7FF;
+  --color-coral: #FB7185;
+  --color-emerald: #10B981;
+  --color-emerald-light: #D1FAE5;
+  --color-surface: #FFFFFF;
+  --color-muted: #78716C;
+  --color-danger: #EF4444;
+  --color-danger-light: #FEF2F2;
+
+  --font-display: 'Fraunces', serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Mesh gradient animation for hero */
+@keyframes meshMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+.mesh-gradient {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(55, 48, 163, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(251, 113, 133, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(245, 158, 11, 0.1) 0%, transparent 40%);
+  background-size: 200% 200%;
+  animation: meshMove 20s ease-in-out infinite;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Step line draw animation */
+@keyframes drawLine {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+.step-line-animate {
+  animation: drawLine 1s ease-out forwards;
+}
+
+/* Counter animation handled in JS */
+
+/* Ripple effect */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--ripple-x, 50%) var(--ripple-y, 50%), rgba(255,255,255,0.3) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.ripple:active::after {
+  opacity: 1;
+}

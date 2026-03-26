@@ -1,36 +1,36 @@
 import { useEffect, useRef } from 'react'
-import { Upload, Brain, Receipt, Banknote, FileCheck } from 'lucide-react'
+import { Megaphone, Users, Eye, Banknote, ShieldCheck } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const steps = [
   {
-    icon: Upload,
-    title: 'Upload creator list',
-    description: 'Brand uploads creator list + payment amounts via dashboard or API.',
+    icon: Megaphone,
+    title: 'Launch Campaign',
+    description: 'Create a campaign, set budgets, timelines, and add creators — all from one dashboard.',
     color: 'bg-indigo',
   },
   {
-    icon: Brain,
-    title: 'Auto-classify TDS',
-    description: 'Rekko auto-classifies TDS section (194J / 194C / 194R) per creator.',
+    icon: Users,
+    title: 'Manage Creators',
+    description: 'KYC-verified creators onboarded. Briefs sent, deliverables tracked, approvals managed.',
     color: 'bg-saffron',
   },
   {
-    icon: Receipt,
-    title: 'TDS deducted & filed',
-    description: 'TDS deducted, challan deposited, complete audit trail created.',
+    icon: Eye,
+    title: 'Track Deliverables',
+    description: 'Real-time pipeline from brief sent → in production → submitted → approved. Nothing falls through.',
     color: 'bg-indigo',
   },
   {
     icon: Banknote,
-    title: 'Bulk UPI payouts',
-    description: 'Bulk UPI payouts sent to all creators instantly.',
+    title: 'Pay Creators Instantly',
+    description: 'Bulk UPI payouts with auto TDS deduction (194J/194C/194R). One click, full audit trail.',
     color: 'bg-emerald',
   },
   {
-    icon: FileCheck,
-    title: 'Form 16A + GST invoice',
-    description: 'Form 16A + GST invoice auto-generated and delivered to each creator.',
+    icon: ShieldCheck,
+    title: 'Compliance on Autopilot',
+    description: 'Challans deposited, 26Q compiled, Form 16A auto-generated and sent to every creator.',
     color: 'bg-saffron',
   },
 ]
@@ -64,11 +64,11 @@ export default function HowItWorks() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 reveal">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-            One platform. Every compliance layer.{' '}
-            <span className="text-saffron">Automated.</span>
+            From brief to Form 16A.{' '}
+            <span className="text-saffron">One platform.</span>
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
-            From upload to payout to Form 16A — five steps, zero spreadsheets.
+            The entire campaign lifecycle — managed, paid, and compliant — in five steps.
           </p>
         </div>
 

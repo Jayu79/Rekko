@@ -29,15 +29,15 @@ export default function Footer() {
               <span className="font-display font-semibold text-xl">Rekko</span>
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              India's Creator Payment Infrastructure. Compliant payouts, automated compliance, zero spreadsheets.
+              The campaign command centre for creator agencies. Manage campaigns, pay creators, stay compliant.
             </p>
           </div>
 
-          {/* Product */}
+          {/* Platform */}
           <div>
-            <h4 className="text-sm font-semibold mb-4 text-white/80">Product</h4>
+            <h4 className="text-sm font-semibold mb-4 text-white/80">Platform</h4>
             <ul className="space-y-2">
-              {['TDS Engine', 'Bulk Payouts', 'Form 16A', 'Creator KYC', 'Dashboard'].map((item) => (
+              {['Campaign Management', 'Creator Roster', 'Deliverable Tracking', 'Bulk Payouts', 'Agency Dashboard'].map((item) => (
                 <li key={item}>
                   <a href="#features" className="text-sm text-white/40 hover:text-white/70 transition-colors">
                     {item}
@@ -51,7 +51,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-4 text-white/80">Compliance</h4>
             <ul className="space-y-2">
-              {['194J / 194C / 194R', '26Q Filing', 'Form 16A', 'GST Invoicing', 'Aadhaar eKYC'].map((item) => (
+              {['TDS Engine (194J/C/R)', '26Q Filing', 'Form 16A', 'GST Invoicing', 'Creator KYC'].map((item) => (
                 <li key={item}>
                   <a href="#how-it-works" className="text-sm text-white/40 hover:text-white/70 transition-colors">
                     {item}

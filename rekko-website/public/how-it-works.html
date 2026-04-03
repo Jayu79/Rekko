@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Rekko Works — 3 Steps to Compliant Creator Payments | Rekko</title>
+  <meta name="description" content="Upload your creator list, Rekko auto-classifies TDS under 194J/194C/194R, generates GST invoices, and pays creators instantly via UPI with Form 16A auto-issued.">
+  <link rel="canonical" href="https://rekko.in/how-it-works">
+  <meta name="keywords" content="how to pay creators India, creator payment workflow, automated TDS deduction, bulk UPI payouts creators, Form 16A automation, creator payment compliance">
+
+  <meta property="og:title" content="How Rekko Works — 3 Steps to Compliant Creator Payments">
+  <meta property="og:description" content="Upload. We handle the rest. Creators get paid. Automated TDS, GST invoices, and instant UPI payouts.">
+  <meta property="og:url" content="https://rekko.in/how-it-works">
+  <meta property="og:site_name" content="Rekko">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Rekko Works — 3 Steps to Compliant Creator Payments">
+  <meta name="twitter:description" content="Upload. We handle the rest. Creators get paid. Automated TDS, GST invoices, and instant UPI payouts.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Pay Creators Compliantly with Rekko",
+    "description": "Three steps to fully compliant creator payments — upload, auto-classify TDS, and instant UPI payouts with Form 16A.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload",
+        "text": "Brand uploads creator list and payment amounts via CSV, API, or the Rekko dashboard."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "We handle the rest",
+        "text": "Rekko auto-classifies TDS under 194J, 194C, or 194R, generates GST invoices, and deducts correctly."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Creators get paid",
+        "text": "Instant UPI payouts to creators with Form 16A auto-issued to every payee."
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #0F172A;
+      --navy-light: #1E293B;
+      --orange: #F97316;
+      --orange-hover: #EA580C;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-800: #1E293B;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', Georgia, serif;
+      line-height: 1.2;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+    .logo .dot { color: var(--orange); }
+    .nav-cta {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--orange-hover); }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 80px 24px 88px;
+      text-align: center;
+    }
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── Steps Section ── */
+    .steps {
+      padding: 100px 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step.reverse .step-visual { order: -1; }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Fraunces', serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    .step-content h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .step-content p {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 16px;
+      max-width: 480px;
+    }
+
+    .step-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .step-details li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--gray-600);
+    }
+    .step-details li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--orange);
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* ── Step Visual Cards ── */
+    .step-visual {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Upload Visual */
+    .upload-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .upload-bar {
+      background: var(--white);
+      border: 2px dashed var(--gray-200);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .upload-bar:hover { border-color: var(--orange); }
+    .upload-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .upload-bar p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      margin-bottom: 0;
+    }
+    .upload-bar strong {
+      color: var(--orange);
+    }
+    .file-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .file-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--gray-600);
+    }
+    .file-pill-icon {
+      font-size: 1rem;
+    }
+    .sample-table {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 0.82rem;
+    }
+    .sample-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .sample-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .sample-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+    }
+    .sample-table tr:last-child td { border-bottom: none; }
+
+    /* Process Visual */
+    .process-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .process-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 16px 20px;
+      transition: border-color 0.2s;
+    }
+    .process-row:hover { border-color: var(--orange); }
+    .process-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(249, 115, 22, 0.08);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .process-text {
+      flex: 1;
+    }
+    .process-text strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .process-text span {
+      font-size: 0.82rem;
+      color: var(--gray-500);
+    }
+    .process-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: #DCFCE7;
+      color: #16A34A;
+      white-space: nowrap;
+    }
+
+    /* Payout Visual */
+    .payout-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .payout-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+    .payout-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .payout-info {
+      flex: 1;
+    }
+    .payout-info strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--navy);
+    }
+    .payout-info span {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+    }
+    .payout-amount {
+      text-align: right;
+    }
+    .payout-amount strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .payout-amount span {
+      font-size: 0.72rem;
+      color: #16A34A;
+      font-weight: 600;
+    }
+    .payout-summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .payout-stat {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .payout-stat-value {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--navy);
+    }
+    .payout-stat-value.green { color: #16A34A; }
+    .payout-stat-value.orange { color: var(--orange); }
+    .payout-stat-label {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 4px;
+    }
+
+    /* ── Connector Arrow ── */
+    .step-connector {
+      text-align: center;
+      margin: -60px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .step-connector-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--gray-200);
+      color: var(--gray-400);
+      font-size: 1.25rem;
+    }
+
+    /* ── Summary Bar ── */
+    .summary {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 64px 24px;
+    }
+    .summary-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+    .summary-item-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .summary-item h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .summary-item p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      padding: 100px 24px;
+      text-align: center;
+      background: var(--white);
+    }
+    .cta h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .cta p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 40px;
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .cta-btn:hover {
+      background: var(--orange-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+    }
+    .cta-secondary {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.95rem;
+      color: var(--orange);
+      font-weight: 500;
+    }
+    .cta-secondary:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: var(--gray-400);
+      padding: 48px 24px;
+    }
+    .footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .footer-logo .dot { color: var(--orange); }
+    footer p { font-size: 14px; margin-bottom: 6px; }
+    footer a { color: var(--gray-400); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .step {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 72px;
+      }
+      .step.reverse .step-visual { order: 0; }
+      .step-connector { margin: -36px 0; }
+      .summary-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .payout-summary { grid-template-columns: 1fr 1fr; }
+      .hero { padding: 60px 20px 64px; }
+    }
+
+    @media (max-width: 480px) {
+      .file-pills { flex-direction: column; }
+      .payout-summary { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">rekko<span class="dot">.</span></a>
+      <a href="mailto:hello@rekko.in" class="nav-cta">Get Early Access</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="hero-label">How It Works</span>
+      <h1>Three steps. Full compliance. Zero hassle.</h1>
+      <p>Upload your creator list, and Rekko handles TDS classification, GST invoices, UPI payouts, and Form 16A — automatically.</p>
+    </div>
+  </header>
+
+  <!-- Steps -->
+  <section class="steps">
+
+    <!-- Step 1: Upload -->
+    <div class="step">
+      <div class="step-content">
+        <div class="step-number">1</div>
+        <h2>Upload your creator list</h2>
+        <p>Add your creators and payment amounts — via CSV upload, direct API integration, or manually in the Rekko dashboard. That's all you need to do.</p>
+        <ul class="step-details">
+          <li>CSV / Excel upload with column auto-mapping</li>
+          <li>REST API for programmatic integration</li>
+          <li>Manual entry for one-off payments</li>
+          <li>PAN auto-verified on upload</li>
+        </ul>
+      </div>
+      <div class="step-visual">
+        <div class="upload-visual">
+          <div class="upload-bar">
+            <div class="upload-icon">&#8682;</div>
+            <p>Drag & drop your <strong>CSV or Excel</strong> file here</p>
+          </div>
+          <div class="file-pills">
+            <span class="file-pill"><span class="file-pill-icon">&#128196;</span> creators_q4.csv</span>
+            <span class="file-pill"><span class="file-pill-icon">&#128196;</span> campaign_dec.xlsx</span>
+            <span class="file-pill"><span class="file-pill-icon">&#9889;</span> API Connected</span>
+          </div>
+          <div class="sample-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Creator</th>
+                  <th>PAN</th>
+                  <th>Amount</th>
+                  <th>UPI ID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Priya Sharma</td>
+                  <td>ABCPS1234K</td>
+                  <td>&#8377;85,000</td>
+                  <td>priya@upi</td>
+                </tr>
+                <tr>
+                  <td>Rohan Mehra</td>
+                  <td>DEFPM5678L</td>
+                  <td>&#8377;1,20,000</td>
+                  <td>rohan@ybl</td>
+                </tr>
+                <tr>
+                  <td>Ananya Iyer</td>
+                  <td>GHIPI9012M</td>
+                  <td>&#8377;45,000</td>
+                  <td>ananya@paytm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-connector">
+      <span class="step-connector-arrow">&darr;</span>
+    </div>
+
+    <!-- Step 2: We Handle the Rest -->
+    <div class="step reverse">
+      <div class="step-content">
+        <div class="step-number">2</div>
+        <h2>We handle the rest</h2>
+        <p>Rekko's engine automatically classifies each payment under the correct TDS section, calculates the deduction, generates GST-compliant invoices, and prepares everything for 26Q filing.</p>
+        <ul class="step-details">
+          <li>Auto-classify: 194J (professional) / 194C (contractor) / 194R (gifts)</li>
+          <li>Threshold tracking across the full financial year</li>
+          <li>GST invoice generated per payout</li>
+          <li>26Q quarterly data compiled and validated</li>
+          <li>Challan 281 deposit handled on time</li>
+        </ul>
+      </div>
+      <div class="step-visual">
+        <div class="process-visual">
+          <div class="process-row">
+            <div class="process-icon">&#128269;</div>
+            <div class="process-text">
+              <strong>PAN Verification</strong>
+              <span>3 creators verified against NSDL</span>
+            </div>
+            <span class="process-badge">Done</span>
+          </div>
+          <div class="process-row">
+            <div class="process-icon">&#9878;</div>
+            <div class="process-text">
+              <strong>TDS Classification</strong>
+              <span>2x 194J (10%) &middot; 1x 194C (1%)</span>
+            </div>
+            <span class="process-badge">Done</span>
+          </div>
+          <div class="process-row">
+            <div class="process-icon">&#128200;</div>
+            <div class="process-text">
+              <strong>TDS Calculated</strong>
+              <span>&#8377;8,500 + &#8377;12,000 + &#8377;450 = &#8377;20,950</span>
+            </div>
+            <span class="process-badge">Done</span>
+          </div>
+          <div class="process-row">
+            <div class="process-icon">&#128203;</div>
+            <div class="process-text">
+              <strong>GST Invoices Generated</strong>
+              <span>3 invoices ready for filing</span>
+            </div>
+            <span class="process-badge">Done</span>
+          </div>
+          <div class="process-row">
+            <div class="process-icon">&#128230;</div>
+            <div class="process-text">
+              <strong>26Q Data Compiled</strong>
+              <span>Q4 FY26 &middot; 3 deductees added</span>
+            </div>
+            <span class="process-badge">Done</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-connector">
+      <span class="step-connector-arrow">&darr;</span>
+    </div>
+
+    <!-- Step 3: Creators Get Paid -->
+    <div class="step">
+      <div class="step-content">
+        <div class="step-number">3</div>
+        <h2>Creators get paid</h2>
+        <p>Net-of-TDS amounts are disbursed instantly via UPI. Every creator automatically receives their Form 16A certificate — no manual PDFs, no chasing.</p>
+        <ul class="step-details">
+          <li>Instant UPI payouts to any VPA or bank account</li>
+          <li>Form 16A auto-generated via TRACES</li>
+          <li>Creator gets payment notification + TDS breakdown</li>
+          <li>Full audit trail for every transaction</li>
+        </ul>
+      </div>
+      <div class="step-visual">
+        <div class="payout-visual">
+          <div class="payout-row">
+            <div class="payout-avatar" style="background: #7C3AED;">PS</div>
+            <div class="payout-info">
+              <strong>Priya Sharma</strong>
+              <span>priya@upi &middot; 194J</span>
+            </div>
+            <div class="payout-amount">
+              <strong>&#8377;76,500</strong>
+              <span>&#10003; Paid via UPI</span>
+            </div>
+          </div>
+          <div class="payout-row">
+            <div class="payout-avatar" style="background: #2563EB;">RM</div>
+            <div class="payout-info">
+              <strong>Rohan Mehra</strong>
+              <span>rohan@ybl &middot; 194J</span>
+            </div>
+            <div class="payout-amount">
+              <strong>&#8377;1,08,000</strong>
+              <span>&#10003; Paid via UPI</span>
+            </div>
+          </div>
+          <div class="payout-row">
+            <div class="payout-avatar" style="background: #059669;">AI</div>
+            <div class="payout-info">
+              <strong>Ananya Iyer</strong>
+              <span>ananya@paytm &middot; 194C</span>
+            </div>
+            <div class="payout-amount">
+              <strong>&#8377;44,550</strong>
+              <span>&#10003; Paid via UPI</span>
+            </div>
+          </div>
+          <div class="payout-summary">
+            <div class="payout-stat">
+              <div class="payout-stat-value green">&#8377;2,29,050</div>
+              <div class="payout-stat-label">Total Disbursed</div>
+            </div>
+            <div class="payout-stat">
+              <div class="payout-stat-value orange">3 of 3</div>
+              <div class="payout-stat-label">Form 16A Issued</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Summary -->
+  <section class="summary">
+    <div class="summary-inner">
+      <div class="summary-item">
+        <div class="summary-item-icon">&#9201;</div>
+        <h3>Under 5 minutes</h3>
+        <p>From CSV upload to creators getting paid. No spreadsheets, no CA calls.</p>
+      </div>
+      <div class="summary-item">
+        <div class="summary-item-icon">&#9878;</div>
+        <h3>100% compliant</h3>
+        <p>Every payout is TDS-deducted, GST-invoiced, and Form 16A-certified.</p>
+      </div>
+      <div class="summary-item">
+        <div class="summary-item-icon">&#128274;</div>
+        <h3>Full audit trail</h3>
+        <p>PAN verification, challan deposits, 26Q data — all documented and downloadable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to automate creator payments?</h2>
+    <p>Join the early access cohort and go fully compliant on autopilot.</p>
+    <a href="mailto:hello@rekko.in" class="cta-btn">Get Early Access</a>
+    <br>
+    <a href="/tds-influencer-payments.html" class="cta-secondary">Read our TDS Guide &rarr;</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">rekko<span class="dot">.</span></div>
+      <p>&copy; 2026 Rekko. All rights reserved.</p>
+      <p><a href="mailto:hello@rekko.in">hello@rekko.in</a></p>
+      <p style="margin-top: 12px;">Built in India &#127470;&#127475;</p>
+    </div>
+  </footer>
+
+</body>
+</html>

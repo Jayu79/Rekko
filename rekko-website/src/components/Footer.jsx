@@ -66,6 +66,8 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-4 text-white/80">Company</h4>
             <ul className="space-y-2">
               {[
+                { label: 'How It Works', href: '/how-it-works.html' },
+                { label: 'TDS Guide', href: '/tds-influencer-payments.html' },
                 { label: 'Blog', href: '#', note: 'Coming Soon' },
                 { label: 'Contact', href: '#cta' },
               ].map((item) => (

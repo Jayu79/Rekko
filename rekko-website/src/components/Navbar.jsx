@@ -14,8 +14,8 @@ export default function Navbar() {
 
   const links = [
     { label: 'Product', href: '#features' },
-    { label: 'How It Works', href: '/how-it-works.html' },
-    { label: 'TDS Guide', href: '/tds-influencer-payments.html' },
+    { label: 'How It Works', href: '/how-it-works' },
+    { label: 'TDS Guide', href: '/tds-influencer-payments' },
     { label: 'Contact', href: '#cta' },
   ]
 

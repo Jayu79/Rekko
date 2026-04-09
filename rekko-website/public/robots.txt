@@ -3,4 +3,4 @@ Allow: /
 Disallow: /app
 Disallow: /dashboard
 
-Sitemap: https://rekko.in/sitemap.xml
+Sitemap: https://www.rekko.in/sitemap.xml
